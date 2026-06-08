@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main/about/style.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>About</title>
+    <style>
+    #modalDesc::after{
+    content:"";
+    display:inline-block;
+    width:6px;          
+    height:1.2em;       
+    background:#ff4500;
+    margin-left:4px;
+    margin-top: 18px;
+    vertical-align:middle;
+    animation:blink .9s infinite;
+
+}
+
+.member-header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+}
+
+.linkedin-link{
+    color:#0A66C2;
+    font-size:1.5rem;
+    transition:0.3s ease;
+}
+
+.linkedin-link:hover{
+    transform:scale(1.2);
+    filter:drop-shadow(0 0 8px #0A66C2);
+}
+
+.linkedin-icon{
+    color:#0A66C2;
+    margin-left:10px;
+    font-size:1.3rem;
+    text-decoration:none;
+    transition:.3s ease;
+}
+
+.linkedin-icon:hover{
+    transform:scale(1.2);
+    filter:drop-shadow(0 0 8px #0A66C2);
+}
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.fire-particle{
+    position:absolute;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--primary);
+    filter:blur(2px);
+    animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div id="loader"></div>
+    <div id="contentSkeleton">
+
+    <div class="skeleton title"></div>
+
+    <div class="skeleton card"></div>
+
+    <div class="skeleton card"></div>
+
+</div>
+
+<img src="/img/logo.png" id="loaderLogo">
+
+<div id="mainContent">
+    <header>
+    <a href="/main/index.html" class="header-logo">
+        <img src="/img/logo.png" alt="Flareonix" class="nav-logo" style="display: none;">
+    </a>
+
+    <nav class="desktop-nav">
+        <a href="/main/index.html">Home</a>
+        <a href="/main/about/index.html" class="active">About</a>
+        <a href="#">Community</a>
+        <a href="#">Agency</a>
+        <a href="#">Incubator</a>
+        <a href="#">AI Tools</a>
+        <a href="/main/contact/index.html">Contact</a>
+    </nav>
+
+    <button class="flare desktop-flare">Enter The Fire</button>
+
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-nav">
+        <a href="/main/index.html">Home</a>
+        <a href="/main/about/index.html" class="active">About</a>
+        <a href="#">Community</a>
+        <a href="#">Agency</a>
+        <a href="#">Incubator</a>
+        <a href="#">AI Tools</a>
+        <a href="/main/contact/index.html">Contact</a>
+    </nav>
+    <button class="flare mobile-flare">Enter The Fire</button>
+</div>
+<section class="auth-screen" id="authScreen">
+    <div class="auth-container">
+        <h1>
+            Enter the <span>Fire</span>
+        </h1>
+        <p>
+            Sign in to access your dashboard and community
+        </p>
+        <div class="auth-card">
+            <button class="google-btn">
+                <svg width="22" height="22" viewBox="0 0 48 48">
+                    <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12S17.4 12 24 12c3 0 5.8 1.1 7.9 2.9l5.7-5.7C34.1 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/>
+                    <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 16 19 12 24 12c3 0 5.8 1.1 7.9 2.9l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/>
+                    <path fill="#4CAF50" d="M24 44c5.2 0 10-2 13.5-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.1-7.9l-6.5 5C9.7 39.7 16.3 44 24 44z"/>
+                    <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-1 2.7-3 4.9-5.7 6.4l6.2 5.2C39.7 36.3 44 30.7 44 24c0-1.3-.1-2.7-.4-3.5z"/>
+                </svg>
+                Continue with Google
+            </button>
+            <div class="divider">
+                <span>OR</span>
+            </div>
+            <small>
+                New to Flareonix? Just click above to create your account automatically.
+            </small>
+            <a href="#" class="back-home">
+                ← Back to Home
+            </a>
+
+        </div>
+
+        <div class="auth-footer">
+            By signing in, you agree to our Terms of Service and Privacy Policy.
+        </div>
+
+    </div>
+
+</section>
+<div class="mobile-menu">
+
+    <div class="mobile-glow"></div>
+
+    <nav class="mobile-nav">
+
+        <a href="/main/index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Community</a>
+        <a href="#">Agency</a>
+        <a href="#">Incubator</a>
+        <a href="#">AI Tools</a>
+        <a href="../about/index.html">Contact</a>
+
+        <button class="flare mobile-flare">
+            Enter The Fire
+        </button>
+
+    </nav>
+
+</div>
+    <div class="noise"></div>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+
+<div class="grid-bg"></div>
+
+<div class="floating-particle p1"></div>
+<div class="floating-particle p2"></div>
+<div class="floating-particle p3"></div>
+<div class="floating-particle p4"></div>
+<div class="floating-particle p5"></div>
+    <section class="about-hero">
+    <div class="about-content">
+        <h1>Igniting The Next Generation of <span>Creators & Founders</span></h1>
+        <p>
+            Flareonix is more than a platform. It's a movement built for ambitious
+            creators, entrepreneurs, developers, and dreamers who refuse to settle
+            for ordinary.
+        </p>
+    </div>
+</section>
+<section class="vision">
+    <div class="vision-box">
+        <h2>Our Vision</h2>
+        <p>
+            To build the world's most powerful ecosystem where young innovators,
+            creators, founders, and developers can learn, earn, build, and grow
+            together.
+        </p>
+    </div>
+
+    <div class="vision-box">
+        <h2>Our Mission</h2>
+        <p>
+            Empower ambitious individuals with community, AI tools, mentorship,
+            opportunities, and resources needed to transform ideas into reality.
+        </p>
+    </div>
+</section>
+<section class="timeline-section">
+
+    <div class="section-title">
+        <h2>The Rise of Flareonix</h2>
+    </div>
+
+    <div class="timeline-bar">
+
+        <div class="timeline-point">
+            <div class="dot"></div>
+            <span>2025</span>
+
+            <div class="timeline-info">
+                <h3>The Beginning</h3>
+                <p>Flareonix was founded with a vision to empower creators.</p>
+            </div>
+        </div>
+
+        <div class="timeline-point">
+            <div class="dot"></div>
+            <span>2026</span>
+
+            <div class="timeline-info">
+                <h3>Expansion</h3>
+                <p>Community growth, AI tools and partnerships launched.</p>
+            </div>
+        </div>
+
+        <div class="timeline-point">
+            <div class="dot"></div>
+            <span>2027</span>
+
+            <div class="timeline-info">
+                <h3>Innovation</h3>
+                <p>Launching advanced creator ecosystem and incubator.</p>
+            </div>
+        </div>
+
+        <div class="timeline-point">
+            <div class="dot"></div>
+            <span>Future</span>
+
+            <div class="timeline-info">
+                <h3>Global Movement</h3>
+                <p>Building the world's most ambitious creator network.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<section class="team-section">
+    <div class="section-header">
+        <span class="tag">THE FIRE BEHIND FLAREONIX</span>
+        <h2>Meet The <span>Core Team</span></h2>
+    </div>
+
+    <div class="team-slider">
+        <div class="team-card active pratyush">
+    <img src="/img/1762459511457.jpg">
+
+    <div class="team-info">
+        <h3>Pratyush Pathak</h3>
+        <a href="https://www.linkedin.com/in/pratyush-pathak-118591312/"
+           target="_blank"
+           class="linkedin-link">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <p>Managing Director</p>
+        
+
+        <a href="#" class="learn-more"
+           data-name="Pratyush Pathak"
+           data-linkedin="https://www.linkedin.com/in/pratyush-pathak-118591312/"
+           data-role="Managing Director"
+           data-desc="managing director">
+           Learn More
+        </a>
+    </div>
+</div>
+<div class="team-card active ayush">
+    <img src="/img/1780363524130.jpg">
+
+    <div class="team-info">
+        <h3>Aayush Manjhariya</h3>
+        <a href="https://www.linkedin.com/in/aayush-manjhariya-14709b340/"
+           target="_blank"
+           class="linkedin-link">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <p>Founder & Vision Architect</p>
+        
+
+        <a href="#" class="learn-more"
+           data-name="Aayush Manjhariya"
+           data-linkedin="https://www.linkedin.com/in/aayush-manjhariya-14709b340/"
+           data-role="Founder & Vision Architect"
+           data-desc="Aayush Manjhariya is the visionary founder of Flareonix, architecting a dynamic ecosystem that unites founders, freelancers, startups, and professionals. Leveraging expertise in entrepreneurship, strategic growth, and community cultivation, he fosters high-impact collaborations, scalable opportunities, and transformative innovation-driven networks.">
+           Learn More
+        </a>
+    </div>
+</div>
+
+<div class="team-card ayush">
+    <img src="/img/IMG_20260603_114449.png">
+    <div class="team-info">
+        <h3>Anjali Chaudhary</h3>
+        <a href="https://www.linkedin.com/in/aayush-manjhariya-14709b340/"
+   target="_blank"
+   class="linkedin-link">
+    <i class="fab fa-linkedin"></i>
+</a>
+        <p>Social Media Manager</p>
+
+        <a href="#" class="learn-more"
+   data-name="Anjali Chaudhary"
+   data-linkedin="https://www.linkedin.com/in/kavyanshi-bali-165111361/"
+   data-role="Social Media Manager"
+   data-desc="I'm Anjali, an MCA graduate with a passion for graphic design, social media management, and digital marketing. I specialize in creating engaging content, managing social media platforms, and building brand presence through creative strategies.
+At Flareonix, I've been working as a Social Media Manager, contributing to content creation, branding, audience engagement, and marketing initiatives.
+My journey with Flareonix has been a valuable learning experience, helping me enhance my creative and professional skills while working with a talented and supportive team. I'm excited to be a part of this growing journey and look forward to achieving many milestones together.">
+   Learn More
+</a>
+    </div>
+</div>
+<div class="team-card unknown">
+    <img src="/img/PROFESSIONAL PHOTO.png">
+    <div class="team-info">
+        <h3>Mohammed Kashif</h3>
+        <a href="https://www.linkedin.com/in/mohammed-kashif-m-/"
+   target="_blank"
+   class="linkedin-link">
+    <i class="fab fa-linkedin"></i>
+</a>
+        <p>Graphics Designer</p>
+
+        <a href="#" class="learn-more"
+   data-name="Mohammed Kashif"
+   data-linkedin="https://www.linkedin.com/in/pratyush-pathak-118591312/"
+   data-role="Graphics Designer"
+   data-desc="Mohammed Kashif is a creative branding enthusiast and graphic designer pursuing B.Com (ACCA). As the founder of Kraftora Studio, he specializes in visual identity, social media creatives, and brand communication. At Flareonix, he drives creative strategy, promotional design, and impactful visual storytelling across initiatives and events.
+">
+   Learn More
+</a>
+    </div>
+</div>
+
+    </div>
+
+</section>
+<section class="gallery">
+
+    <div class="section-title">
+        <h2>Gallery</h2>
+    </div>
+
+    <div class="gallery-wrapper">
+
+        <button class="gallery-btn prev">&#10094;</button>
+
+        <div class="gallery-slider">
+
+            <img src="/img/flareonix_gallary (1).jpeg">
+            <img src="/img/flareonix_gallary (2).jpeg">
+            <img src="/img/flareonix_gallary(3).jpeg">
+            <img src="/img/flareonix_gallary (2).jpeg">
+            <img src="/img/flareonix_gallary (1).jpeg">
+            <img src="/img/flareonix_gallary(3).jpeg">
+            
+        </div>
+
+        <button class="gallery-btn next">&#10095;</button>
+
+    </div>
+
+</section>
+<section class="values">
+
+    <div class="value-card">
+        <h3>🔥 Innovation</h3>
+        <p>Always building what's next.</p>
+    </div>
+
+    <div class="value-card">
+        <h3>🚀 Growth</h3>
+        <p>Constant learning and improvement.</p>
+    </div>
+
+    <div class="value-card">
+        <h3>🤝 Community</h3>
+        <p>Success grows when shared.</p>
+    </div>
+
+</section>
+<div class="member-modal">
+
+    <div class="modal-card">
+
+        <button class="close-modal">✕</button>
+
+        <div class="modal-glow"></div>
+
+        <h2 id="modalName"></h2>
+
+        <h4 id="modalRole"></h4>
+
+        <p id="modalDesc"></p>
+
+    </div>
+
+</div>
+<div id="particles"></div>
+
+<script>
+    const particles = document.getElementById("particles");
+
+setInterval(() => {
+
+    const p = document.createElement("div");
+    p.className = "fire-particle";
+
+    p.style.left = Math.random()*100 + "vw";
+
+    const size = Math.random()*10+4;
+    p.style.width = size+"px";
+    p.style.height = size+"px";
+
+    const duration = Math.random()*4+3;
+    p.style.animationDuration = duration+"s";
+
+    particles.appendChild(p);
+
+    setTimeout(()=>{
+        p.remove();
+    },duration*1000);
+
+},200);
+</script>
+<script>
+
+let lastX = 0;
+let lastY = 0;
+
+document.addEventListener("mousemove",(e)=>{
+
+    const distance =
+        Math.hypot(
+            e.clientX-lastX,
+            e.clientY-lastY
+        );
+
+    if(distance < 8) return;
+
+    lastX = e.clientX;
+    lastY = e.clientY;
+
+    const fire = document.createElement("div");
+    fire.className = "fire-trail";
+
+    fire.style.left = e.clientX + "px";
+    fire.style.top = e.clientY + "px";
+
+    document.body.appendChild(fire);
+
+    setTimeout(()=>{
+        fire.remove();
+    },800);
+
+});
+
+
+document.addEventListener("click",(e)=>{
+
+    for(let i=0;i<18;i++){
+
+        const spark =
+            document.createElement("div");
+
+        spark.className = "spark";
+
+        spark.style.left =
+            e.clientX + "px";
+
+        spark.style.top =
+            e.clientY + "px";
+
+        const angle =
+            Math.random()*Math.PI*2;
+
+        const distance =
+            40 + Math.random()*60;
+
+        spark.style.setProperty(
+            "--dx",
+            `${Math.cos(angle)*distance}px`
+        );
+
+        spark.style.setProperty(
+            "--dy",
+            `${Math.sin(angle)*distance}px`
+        );
+
+        document.body.appendChild(spark);
+
+        setTimeout(()=>{
+            spark.remove();
+        },700);
+
+    }
+
+});
+const cursor =
+document.createElement("div");
+
+cursor.className = "flame-cursor";
+
+document.body.appendChild(cursor);
+
+document.addEventListener("mousemove",(e)=>{
+    cursor.style.left = e.clientX+"px";
+    cursor.style.top = e.clientY+"px";
+});
+</script>
+
+<script src="/main/about/script.js"></script>
+<script>
+    
+
+const slider = document.querySelector('.gallery-slider');
+
+const next = document.querySelector('.next');
+
+const prev = document.querySelector('.prev');
+
+let position = 0;
+
+const slideAmount = 425;
+
+next.addEventListener('click',()=>{
+
+    position -= slideAmount;
+
+    const maxSlide =
+    -(slider.scrollWidth - slider.parentElement.offsetWidth);
+
+    if(position < maxSlide){
+
+        position = 0;
+    }
+
+    slider.style.transform =
+    `translateX(${position}px)`;
+
+});
+
+prev.addEventListener('click',()=>{
+
+    position += slideAmount;
+
+    if(position > 0){
+
+        position =
+        -(slider.scrollWidth - slider.parentElement.offsetWidth);
+    }
+
+    slider.style.transform =
+    `translateX(${position}px)`;
+
+});
+
+setInterval(()=>{
+
+    next.click();
+
+},4000);
+
+</script>
+</div>
+</body>
+</html>
